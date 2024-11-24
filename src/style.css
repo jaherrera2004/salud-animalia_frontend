@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilo de la notificación tipo éxito */
+.notyf.success {
+  background-color: #34d399; /* Un color verde suave */
+  color: white;
+  border-radius: 50px !important; /* Forzar la notificación ovalada */
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilo de la notificación tipo error */
+.notyf.error {
+  background-color: #f87171; /* Un color rojo suave */
+  color: white;
+  border-radius: 50px !important; /* Forzar la notificación ovalada */
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Animación para aparecer y desaparecer */
+.notyf {
+  opacity: 0;
+  animation: slideIn 0.5s forwards, slideOut 0.5s 2.5s forwards;
+  z-index: 9999;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
